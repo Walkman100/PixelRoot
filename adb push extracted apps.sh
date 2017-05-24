@@ -4,8 +4,6 @@
 ## Also, if `adb root` returns "adbd cannot run as root in production builds"
 ##  as it did on my device, you will need to start ADBD in root mode some other way
 ##  There is an app: "adbd insecure": https://stackoverflow.com/a/28070414/2999220
-##  I used "adb remount insecure.sh" after pushing "adbd" found in the app to /sdcard
-##  because the adbd insecure app doesn't work on my device
 
 export adb="~/bin/platform-tools/adb"
 export packages=`ls apps`
