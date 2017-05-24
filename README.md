@@ -4,8 +4,15 @@ Scripts and files I used to backup & root my Google Pixel (sailfish) on May upda
 A complete guide to rooting the Google Pixel
 
 ## Libraries/Tools
-platform-tools-latest-linux.zip
-android-backup-extractor-20160710-bin.zip
+### ADB and Fastboot
+- Latest ADB and Fastboot: https://developer.android.com/studio/releases/platform-tools.html#download
+- Yes LATEST is required! some functions needed in scripts in this repo don't exist on older versions of ADB, especially the dual-bootloader slots functionality that is new to Android
+- Extract this to ~/bin (so `~/bin/platform-tools/adb` is executable) or change the variables in the scripts to point to where you extracted it to
+
+### ABE (Android Backup Extractor)
+- Only used for extracting the backup file, if you don't need to be able to restore a backup then don't bother.
+- Download from: https://sourceforge.net/projects/adbextractor/
+- easiest is to extract the `*.jar`s and `*.sh`s to this repo, or you could edit the commands to where you put it
 
 ## Bootloader
 First off, if you have not already, you will have to unlock the bootloader. This wipes the device, so make sure you make a backup first!
@@ -23,7 +30,7 @@ first, make sure you have a terminal open in this repo folder
 
 If you have just followed the steps above:
 - reboot into the bootloader after the phone has finished starting up
-- run `fastboot boot twrp-3.0.2-0-RC1-fastboot-sailfish.img` to boot inte TWRP
+- run `fastboot boot twrp-3.0.2-0-RC1-fastboot-sailfish.img` to boot into TWRP
 - then have a look at the end of `root.sh` for steps in TWRP (the `echo` commands)
 
 If you have tried to get root working with some other method or Android isn't booting properly:
