@@ -1,6 +1,13 @@
-sailfish-n2g47o-factory-f2bc8024.zip
+## Dirs
 sailfish-n2g47o/
 apps/
 split-ab/
-backup.ab
+carbon/
+
+## Files
+*.zip
+*.img
+*.ab
+*.tar
 *.kate-swp
+apk-missing.html
