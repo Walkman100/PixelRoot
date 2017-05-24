@@ -31,11 +31,11 @@ First, make sure you have a terminal open in this repo folder
 If you have just followed the steps above:
 - reboot into the bootloader after the phone has finished starting up
 - run `fastboot boot twrp-3.0.2-0-RC1-fastboot-sailfish.img` to boot into TWRP
-- then have a look at the end of `root.sh` for steps in TWRP (the `echo` commands)
+- then have a look at the end of [`root.sh`](root.sh) for steps in TWRP (the `echo` commands)
 
 If you have tried to get root working with some other method or Android isn't booting properly:
-- run `bash set-up.sh` once-off to download and extract the official firmware
-- run `bash root.sh` to flash bootloaders, system image e.t.c. (pretty much everything) and boot into TWRP. It also tells you what to do in TWRP
+- run [`bash set-up.sh`](set-up.sh) once-off to download and extract the official firmware
+- run [`bash root.sh`](root.sh) to flash bootloaders, system image e.t.c. (pretty much everything) and boot into TWRP. It also tells you what to do in TWRP
 
 ## Restoring the backup made from `adb backup`
 The most simple command/process is to simply run this after setting up the phone (and enabling USB debugging again):
@@ -43,10 +43,10 @@ The most simple command/process is to simply run this after setting up the phone
 
 However, in my experience this doesn't work completely, so another thing to try:
 - run `bash adb-split-no-extraction.sh backup.ab` (from ABE), this will split the backup into smaller backups, one per app
-- then run `bash adb-restore.sh`, this simply `adb restore`s all the backups individually
+- then run [`bash adb-restore.sh`](adb-restore.sh), this simply `adb restore`s all the backups individually
 
 That didn't work for me either, next try:
-- run `bash helium-ise.sh` which copies the backups to a folder called `carbon` and puts them in a format that Helium can recognise
+- run [`bash helium-ise.sh`](helium-ise.sh) which copies the backups to a folder called `carbon` and puts them in a format that Helium can recognise
 - move/copy `carbon` to /sdcard on your phone, then use the app Helium (on Google Play) to restore the backups
 
 That didn't work for me either, next try:
@@ -56,5 +56,5 @@ That didn't work for me either, next try:
   - try running `adb root`, if this completes successfully then you're set
   - if `adb root` returns `adbd cannot run as root in production builds` as it did on my device, you will need to start ADBD in root mode some other way:
   - There is an app: "adbd insecure": https://stackoverflow.com/a/28070414/2999220
-  - if that app doesn't work (didn't for me), use `bash adb-remount-insecure.sh` after extracting the proper ADBD from the app apk and pushing it to /sdcard
-- run `bash "adb push extracted apps.sh"` to forcefully push the data to the phone, then set the proper permissions on the files so they can be accessed by apps
+  - if that app doesn't work (didn't for me), use [`bash adb-remount-insecure.sh`](adb-remount-insecure.sh) after extracting the proper ADBD from the app apk and pushing it to /sdcard
+- run [`bash "adb push extracted apps.sh"`](adb push extracted apps.sh) to forcefully push the data to the phone, then set the proper permissions on the files so they can be accessed by apps
