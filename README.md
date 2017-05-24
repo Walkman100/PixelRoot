@@ -57,4 +57,5 @@ That didn't work for me either, next try:
   - if `adb root` returns `adbd cannot run as root in production builds` as it did on my device, you will need to start ADBD in root mode some other way:
   - There is an app: "adbd insecure": https://stackoverflow.com/a/28070414/2999220
   - if that app doesn't work (didn't for me), use [`bash adb-remount-insecure.sh`](adb-remount-insecure.sh) after extracting the proper ADBD from the app apk and pushing it to /sdcard
-- run [`bash "adb push extracted apps.sh"`](adb push extracted apps.sh) to forcefully push the data to the phone, then set the proper permissions on the files so they can be accessed by apps
+  - if ADB doesn't pick up your phone at all even after disabling and re-enabling USB debugging, reboot your phone to reset ADBD
+- run [`bash "adb push extracted apps.sh"`](adb%20push%20extracted%20apps.sh) to forcefully push the data to the phone, then set the proper permissions on the files so they can be accessed by apps
