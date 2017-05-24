@@ -26,7 +26,15 @@ First off, if you have not already, you will have to unlock the bootloader. This
 - Run `fastboot oem unlock` while in bootloader, then accept prompt on phone to wipe & unlock
 
 ## Rooting
-First, make sure you have a terminal open in this repo folder
+There are several files you will need to download:
+- TWRP: https://dl.twrp.me/sailfish/
+  - download `twrp-3.0.2-0-RC1-fastboot-sailfish.img` and `twrp-pixel-installer-sailfish-3.1.0-0RC2.zip`
+- SuperSU: https://plus.google.com/+Chainfire/posts/27xToSqi5em
+  - "Download flashable ZIP"
+- BootImageSigner: https://forum.xda-developers.com/android/software-hacking/signing-boot-images-android-verified-t3600606
+  - download `VerifiedBootSigner-v5.zip`, under "Attached Files"
+
+Then, make sure you have a terminal open in this repo folder
 
 If you have just followed the steps above:
 - reboot into the bootloader after the phone has finished starting up
