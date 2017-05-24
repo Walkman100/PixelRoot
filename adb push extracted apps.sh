@@ -1,9 +1,6 @@
 #!/bin/bash
 ## Based on https://www.semipol.de/2016/07/30/android-restoring-apps-from-twrp-backup.html
 ##  and my own findings on the ADB backup structure
-## Also, if `adb root` returns "adbd cannot run as root in production builds"
-##  as it did on my device, you will need to start ADBD in root mode some other way
-##  There is an app: "adbd insecure": https://stackoverflow.com/a/28070414/2999220
 
 export adb="~/bin/platform-tools/adb"
 export packages=`ls apps`
