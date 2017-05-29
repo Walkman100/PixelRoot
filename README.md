@@ -31,12 +31,12 @@ There are several files you will need to download:
   - download `twrp-3.0.2-0-RC1-fastboot-sailfish.img` and `twrp-pixel-installer-sailfish-3.1.0-0RC2.zip`
 - SuperSU: https://plus.google.com/+Chainfire/posts/27xToSqi5em
   - "Download flashable ZIP"
-- BootImageSigner: https://forum.xda-developers.com/android/software-hacking/signing-boot-images-android-verified-t3600606
+- BootImageSigner: https://forum.xda-developers.com/showthread.php?t=3600606
   - download `VerifiedBootSigner-v5.zip`, under "Attached Files"
 
 Then, make sure you have a terminal open in this repo folder
 
-If you have just followed the steps above:
+If you have just followed the steps above to unlock the bootloader:
 - reboot into the bootloader after the phone has finished starting up
 - run `fastboot boot twrp-3.0.2-0-RC1-fastboot-sailfish.img` to boot into TWRP
 - then have a look at the end of [`root.sh`](root.sh) for steps in TWRP (the `echo` commands)
@@ -67,3 +67,8 @@ That didn't work for me either, next try:
   - if that app doesn't work (didn't for me), use [`bash adb-remount-insecure.sh`](adb-remount-insecure.sh) after extracting the proper ADBD from the app apk and pushing it to /sdcard
   - if ADB doesn't pick up your phone at all even after disabling and re-enabling USB debugging, reboot your phone to reset ADBD
 - run [`bash "adb push extracted apps.sh"`](adb%20push%20extracted%20apps.sh) to forcefully push the data to the phone, then set the proper permissions on the files so they can be accessed by apps
+
+What Did actually work for me:
+- it seems to be that adb-restore doesn't restore the APKs, and if an app isn't installed it doesn't install the data...
+- I simply ran the first section of [`adb push extracted apps.sh`](adb%20push%20extracted%20apps.sh) to install the APKs
+- then ran `adb restore backup.ab` to get everything working
