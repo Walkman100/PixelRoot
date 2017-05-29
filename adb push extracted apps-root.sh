@@ -15,16 +15,19 @@ done
 # restore data
 for i in $packages; do
     if [ -d "apps/$i/f" ]; then
-        $adb push "apps/$i/f" "/data/data/$i/files"
+        $adb push "apps/$i/f" "/sdcard/tmpdata/$i/files"
     fi
     if [ -d "apps/$i/db" ]; then
-        $adb push "apps/$i/db" "/data/data/$i/databases"
+        $adb push "apps/$i/db" "/sdcard/tmpdata/$i/databases"
     fi
     if [ -d "apps/$i/sp" ]; then
-        $adb push "apps/$i/sp" "/data/data/$i/shared_prefs"
+        $adb push "apps/$i/sp" "/sdcard/tmpdata/$i/shared_prefs"
     fi
     if [ -d "apps/$i/r" ]; then
-        $adb push "apps/$i/r" "/data/data/$i"
+        $adb push "apps/$i/r" "/sdcard/tmpdata/$i"
+    fi
+    if $adb shell [ -d "/sdcard/tmpdata/$i" ]; then
+        $adb shell su -c cp -r -F "/sdcard/tmpdata/$i" "/data/data/$i"
     fi
     if [ -d "apps/$i/ef" ]; then
         $adb push "apps/$i/ef" "/sdcard/Android/data/$i/files"
