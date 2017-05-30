@@ -32,7 +32,7 @@ There are several files you will need to download:
 - SuperSU: https://plus.google.com/+Chainfire/posts/27xToSqi5em
   - "Download flashable ZIP"
 - BootImageSigner: https://forum.xda-developers.com/showthread.php?t=3600606
-  - download `VerifiedBootSigner-v5.zip`, under "Attached Files"
+  - download `VerifiedBootSigner-v8.zip`, under "Attached Files"
 
 Then, make sure you have a terminal open in this repo folder
 

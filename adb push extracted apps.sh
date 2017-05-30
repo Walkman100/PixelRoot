@@ -30,7 +30,7 @@ for i in $packages; do
         $adb push "apps/$i/ef" "/sdcard/Android/data/$i/files"
     fi
     if [ -d "apps/$i/obb" ]; then
-        $adb push "apps/$i/obb" "/mnt/obb/$i"
+        $adb push "apps/$i/obb" "/sdcard/Android/obb/$i"
     fi
 done
 
