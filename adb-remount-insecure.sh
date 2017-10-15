@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 export adb="$HOME/bin/platform-tools/adb"
 
 if $adb shell [ ! -f "/sdcard/adbd" ]; then

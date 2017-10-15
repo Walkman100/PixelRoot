@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 mkdir carbon
 for i in `ls split-ab`; do
     mkdir carbon/${i::-3}

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ## Based on https://www.semipol.de/2016/07/30/android-restoring-apps-from-twrp-backup.html
 ##  and my own findings on the ADB backup structure
 

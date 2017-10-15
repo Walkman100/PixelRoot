@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 export adb="~/bin/platform-tools/adb"
 export fastboot="~/bin/platform-tools/fastboot"
 
